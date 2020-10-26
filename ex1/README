@@ -1,0 +1,27 @@
+Convolution Excercise :
+the main theme of this ex is: convolution and practicing writing in C.
+Running time requirements: one step of convolution would take max of o(n^2).
+Ex description:
+What was my approach when writing the ex?
+I sparated my program into 3 main parts - input, convolution, output.
+in the input part of the program i tried to write small functions and use them in all three parts of the input to
+refrain from code repetition. in addition i checked the input was correct .
+
+How does the program works? what are the programming tools i used?
+The convolution function is happening in two stages -
+with a helper funtion i used a temp array and after convolution coppied it into the result array.
+this way i could send one of the arrays as result and input for the helper function which does the actual formula of
+convolution.
+second, the convolution function, if n is 1, convolution happens with g and h array, into result.
+if n > 1, meaning all other convolution iterations, i sent result array as g, with h. since convolution is a commutative
+opetator it is possible, make process simple and easy to run as many iterations as needed.
+(g*h)*h*h*h*...*h (n times h)
+g*h = res
+-> (res*h)*h*..*h (n-1 times h)
+and so on..
+also, i used pointers throughout the program. the key veriables were declered in the main, and passed pointers to the
+functions, so i could change them of use the exact same veriables throughout the program, for example g, h and result
+arrays. as i explained earlier, a few different functions needed to change the same arrays, so if it was easier, and
+saved me some memory space.
+the data bases i used were mainly arrays. i didn't have to build new ones.
+familiar algorithms i used and untriveial teqniques - non this ex.

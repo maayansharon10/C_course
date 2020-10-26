@@ -1,0 +1,38 @@
+Tree Analyzer Excercise :
+in this excercise i wrote a program which recieves 3 args from command line -
+a text file and 2 integers. in case the arg are valid, it reads the file and process it into a
+node array which is the data structure i chose for the graph. in case the graph is actually a tree as described in
+the ex's description, then the program continue and calculate the tree's root, vertices, edges, min and max branch,
+diameter and shortest path between the 2 given nodes.
+in any case there's a problem, the program exit and prints to err the relavent error.
+
+there were few demands for running times -
+cheacking if it is a tree - o(|v|+|e|) since i used dfs's explore in the method exploreDFS().
+finding the number of edges - o(1) - since i save the number on edes when i first read the lines - it is in face only
+o(1).
+finding the root - o(n) in the method rootsNumValidation()
+finding the path between u to v is o(|v|+|u|) since i use bfs once in findShortestPath()
+which is equal or less then o(n^2) which the ex required.
+finding the diameter in  getDiameter()  is o(|v|+|u|) which is equal or less then o(n^2) which the ex required.
+
+in this program i used 2 familiar algorithms - bfs and dfs as mentions in ex description.
+
+in addition i made a struct name Node which reresented a single node in the graph.
+it countains feilds which were relevant for the algorithms and methods in the program.
+also the data structure i used was a node array which made the process of checking different values easier.
+
+it is important to notice that since there's no indecation of what size the given graph would be,
+throughout the program i dinamecly alocated memory for different variables,
+mainly arrays and nodes.
+before each time the program exit and when exiting due end of running, the program free all the allocated memory from
+the heap.
+
+in general main functions from main-
+validateArgs - check if args are valid
+readAndProcessFirstLine - parser the first line
+readAndProcessFileToNodeArray - parse send to end of file. most of the program happens here
+exploreDFS - run dfs' explore part of the algorithm to check if graph is indeed a tree
+getLengthMininalBranch()
+getLengthMaximalBranch()
+findShortestPath
+getDiameter
