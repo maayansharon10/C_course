@@ -1,2 +1,2 @@
 # C_course
-HUJI C workshop summer 2020
+C course Hebrew University of Jerusalem, summer 2020
